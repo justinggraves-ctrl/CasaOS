@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "trayd": {
+      "type": "http",
+      "url": "https://mcp.trayd.ai/mcp"
+    }
+  }
+}
