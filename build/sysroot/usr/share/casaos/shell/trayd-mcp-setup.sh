@@ -6,7 +6,6 @@
 set -e
 
 TRAYD_MCP_URL="https://mcp.trayd.ai/mcp"
-ROBINHOOD_MCP_URL="https://agent.robinhood.com/mcp/trading"
 
 if ! command -v claude &>/dev/null; then
   echo "Claude Code is not installed. Install it first:"
@@ -17,14 +16,12 @@ fi
 echo "Adding Trayd MCP server to Claude Code (user-scoped)..."
 claude mcp add --transport http trayd "$TRAYD_MCP_URL" --scope user
 
-echo "Adding Robinhood Trading MCP server to Claude Code (user-scoped)..."
-claude mcp add --transport http robinhood-trading "$ROBINHOOD_MCP_URL" --scope user
-
 echo ""
-echo "MCP servers added successfully."
+echo "Trayd MCP server added successfully."
 echo ""
 echo "Next steps:"
 echo "  1. Run 'claude' to open Claude Code"
 echo "  2. Type '/mcp' to open the server panel"
-echo "  3. Select each server and click Authorize to complete the OAuth flow"
-echo "  4. Try: 'Show me my portfolio' or 'Buy 1 share of AAPL'"
+echo "  3. Select 'trayd' and click Authorize to complete the OAuth flow"
+echo "  4. Say: 'Link my Robinhood account'"
+echo "  5. Try: 'Show me my portfolio' or 'Buy 1 share of AAPL'"
